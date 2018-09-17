@@ -8,7 +8,10 @@
 def multiply(x):
 	return x + x
 
+def int_fn(x):
+	return x
 
+print map(int_fn, [9,9])
 print map(multiply, [1,2,3,4])
 
 print map(lambda x : x*x, [1,2,3,4])
