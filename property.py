@@ -38,30 +38,37 @@ class Celsius_dec:
 
     @temperature.setter
     def temperature(self, value):
-        if value < -273:
-            raise ValueError("Temperature below -273 is not possible")
+        if value < 273:
+            raise ValueError("Temperature below 273 is not possible")
         print("Setting value")
         self._temperature = value
 
 
-class Celsius:
-    def __init__(self, temperature = 0):
-        self._temperature = temperature
 
-    def to_fahrenheit(self):
-        return (self.temperature * 1.8) + 32
+# C = Celsius_dec()
 
-    def get_temperature(self):
-        print("Getting value")
-        return self._temperature
+# C.temperature = 24
 
-    def set_temperature(self, value):
-        if value < -273:
-            raise ValueError("Temperature below -273 is not possible")
-        print("Setting value")
-        self._temperature = value
+# print C.temperature
 
-    temperature = property(get_temperature,set_temperature)
+# class Celsius:
+#     def __init__(self, temperature = 0):
+#         self._temperature = temperature
+
+#     def to_fahrenheit(self):
+#         return (self.temperature * 1.8) + 32
+
+#     def get_temperature(self):
+#         print("Getting value")
+#         return self._temperature
+
+#     def set_temperature(self, value):
+#         if value < -273:
+#             raise ValueError("Temperature below -273 is not possible")
+#         print("Setting value")
+#         self._temperature = value
+
+#     temperature = property(get_temperature,set_temperature)
 
 # The property() function returns a special descriptor object:
 
@@ -73,9 +80,9 @@ class Celsius:
 # <built-in method deleter of property object at 0x10ff07998>
 
 
-class_instance = Celsius()
-class_instance.temperature = -273
-print class_instance.temperature
+# class_instance = Celsius()
+# instead of writing class_instance.get_temperature()
+# print class_instance.temperature
 
 # print class_instance.temperature
 

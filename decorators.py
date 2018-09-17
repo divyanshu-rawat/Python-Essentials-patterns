@@ -95,17 +95,35 @@ say_hello_again = say_hello
 
 
 
-def say_hey(fn):
-	def print_hey():
-		print 'hey'
-		fn()
-	return print_hey
+# def say_hey(fn):
+# 	def print_hey():
+# 		print 'hey'
+# 		fn()
+# 	return print_hey
 
+# def say_bye():
+# 	print 'bye'
+
+
+# say_bye = say_hey(say_bye);
+
+def decorator_func(fun):
+	def wrapper_func():
+		print("Wrapper function started")
+		fun()
+		print("Given function decorated")
+		# Wrapper function add something to the passed function and decorator 
+        # returns the wrapper function
+	return wrapper_func
+
+@decorator_func
 def say_bye():
-	print 'bye'
+	print("bye!!")
+
+say_bye()
 
 
-say_bye = say_hey(say_bye);
+
 # say_bye()
 
 # This is a common construct and for this reason, Python has a syntax to simplify this.
